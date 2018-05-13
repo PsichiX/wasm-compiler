@@ -40,3 +40,27 @@ wat2wasm(script, { explain: true, debug: true })
   .then(bytes => console.log(bytes))
   .catch(e => console.error(e));
 ```
+
+# Browser Usage
+```html
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <script src="bin/wasm-compiler.min.js"></script>
+  </head>
+  <body>
+    <script>
+    const script = `(module
+      (func $add (export "add") (param $a i32) (param $b i32) (result i32)
+        get_local $a
+        get_local $b
+        i32.add
+      )
+    )`;
+    WasmCompiler.wat2wasm(script, { explain: true, debug: true })
+      .then(bytes => console.log(bytes))
+      .catch(e => console.error(e));
+    </script>
+  </body>
+</html>
+```

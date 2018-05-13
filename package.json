@@ -6,15 +6,23 @@
   "scripts": {
     "postinstall": "npm run build",
     "build-api": "./node_modules/.bin/babel src --out-dir bin",
-    "build-browserify": "./node_modules/.bin/browserify bin/index -o bin/wasm-compiler.js -s WasmCompiler",
-    "build-uglify": "./node_modules/.bin/uglifyjs -nm -o bin/wasm-compiler.min.js bin/wasm-compiler.js",
-    "build-web": "npm run build-browserify",
+    "build-browserify": "./node_modules/.bin/browserify bin/index -o bin/wasm-compiler.js -s WasmCompiler --noparse=lib/libwabt.js",
+    "build-browserify-uglify": "./node_modules/.bin/browserify bin/index -o bin/wasm-compiler.min.js -s WasmCompiler --noparse=lib/libwabt.js -t uglifyify",
+    "build-web": "npm run build-browserify && npm run build-browserify-uglify",
     "build": "npm run build-api && npm run build-web",
     "clean": "rm -r bin"
   },
   "bin": {
     "wasmc": "./bin/cli.js"
   },
+  "files": [
+    "lib/",
+    "src/",
+    "test/",
+    ".babelrc",
+    "bin/wasm-compiler.js",
+    "bin/wasm-compiler.min.js"
+  ],
   "author": "Patryk 'PsichiX' Budzynski <psichix@gmail.com> (http://psichix.io)",
   "license": "MIT",
   "dependencies": {
@@ -22,7 +30,7 @@
     "@babel/core": "^7.0.0-beta.46",
     "@babel/preset-env": "^7.0.0-beta.46",
     "browserify": "^16.2.2",
-    "uglify-js": "^3.3.24",
+    "uglifyify": "^5.0.0",
     "yargs": "^11.0.0"
   }
 }
