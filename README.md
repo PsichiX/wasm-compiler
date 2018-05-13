@@ -7,6 +7,10 @@ npm install --save wasm-compiler
 ```
 
 # CLI Usage
+```bash
+wasmc -i test.wast -o test.wasm
+```
+
 ```
 Usage: wasmc [options]
 
@@ -36,7 +40,7 @@ const script = `(module
     i32.add
   )
 )`;
-wat2wasm(script, { explain: true, debug: true })
+wat2wasm('test.wast', script, { explain: true, debug: true })
   .then(bytes => console.log(bytes))
   .catch(e => console.error(e));
 ```
@@ -46,7 +50,7 @@ wat2wasm(script, { explain: true, debug: true })
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <script src="bin/wasm-compiler.min.js"></script>
+    <script src="https://unpkg.com/@intuicio/wasm-compiler/bin/wasm-compiler.min.js"></script>
   </head>
   <body>
     <script>
@@ -57,7 +61,7 @@ wat2wasm(script, { explain: true, debug: true })
         i32.add
       )
     )`;
-    WasmCompiler.wat2wasm(script, { explain: true, debug: true })
+    WasmCompiler.wat2wasm('test.wast', script, { explain: true, debug: true })
       .then(bytes => console.log(bytes))
       .catch(e => console.error(e));
     </script>
