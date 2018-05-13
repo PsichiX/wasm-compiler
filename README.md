@@ -18,7 +18,7 @@ wasmc -i test.wast -o test.wasm
 ```
 Usage: wasmc [options]
 
-Opcje:
+Options:
   -i, --input    Input file path                             [string] [required]
   -o, --output   Output file path                            [string] [required]
   -s, --silent   Silent                                                [boolean]
