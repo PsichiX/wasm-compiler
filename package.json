@@ -1,6 +1,6 @@
 {
   "name": "@intuicio/wasm-compiler",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "WASM compiler (supports compilation between formats: WAT, WASM, AST)",
   "main": "./bin/cli.js",
   "scripts": {
@@ -22,6 +22,7 @@
     ".babelrc",
     "bin/wasm-compiler.js",
     "bin/wasm-compiler.min.js"
+    "bin/cli.js"
   ],
   "author": "Patryk 'PsichiX' Budzynski <psichix@gmail.com> (http://psichix.io)",
   "license": "MIT",
