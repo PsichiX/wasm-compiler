@@ -20,9 +20,9 @@
     "src/",
     "test/",
     ".babelrc",
+    "bin/cli.js",
     "bin/wasm-compiler.js",
     "bin/wasm-compiler.min.js"
-    "bin/cli.js"
   ],
   "author": "Patryk 'PsichiX' Budzynski <psichix@gmail.com> (http://psichix.io)",
   "license": "MIT",
