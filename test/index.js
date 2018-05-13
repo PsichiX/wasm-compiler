@@ -1,5 +1,5 @@
 var req = new XMLHttpRequest();
-req.open("GET", "/test.wasm", true);
+req.open("GET", "/test2.wasm", true);
 req.responseType = "arraybuffer";
 req.onload = function (oEvent) {
   var arrayBuffer = req.response;
@@ -9,7 +9,8 @@ req.onload = function (oEvent) {
     var imports = {
       helpers: {
         one: function() { return 1; },
-        out: function(v) { document.write(v); return v; }
+        out: function(v) { document.write('value: ' + v + '<br/>'); return v; },
+        addr: function(v) { document.write('address: ' + v + '<br/>'); }
       }
     };
     var instance = new WebAssembly.Instance(module, imports);
