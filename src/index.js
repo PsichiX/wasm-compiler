@@ -25,7 +25,7 @@ export function wat2wasm(filename, source, { explain = false, debug = false }) {
     });
 }
 
-export function wasm2wat(source, { debug = false }) {
+export function wasm2wat(source, { debug = false, pretty = false }) {
   if (!(source instanceof Uint8Array)) {
     throw new Error('`source` is not type of Uint8Array!');
   }
@@ -40,8 +40,8 @@ export function wasm2wat(source, { debug = false }) {
         module.applyNames();
       }
       return [ module, module.toText({
-        foldExprs: true,
-        inlineExport: true
+        foldExprs: pretty,
+        inlineExport: pretty
       }) ];
     })
     .then(r => {
