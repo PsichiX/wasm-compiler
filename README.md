@@ -1,9 +1,13 @@
-# wasm-compiler
+# @intuicio/wasm-compiler
 Node.js and browser WASM compiler (using Wabbit - official WebAssembly WAT-to-WASM parser)
 
 # Install
 ```bash
-npm install --save wasm-compiler
+npm install --save @intuicio/wasm-compiler
+```
+
+```bash
+npm install -g @intuicio/wasm-compiler
 ```
 
 # CLI Usage
