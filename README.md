@@ -41,9 +41,7 @@ import { wat2wasm } from '@intuicio/wasm-compiler';
 
 const script = `(module
   (func $add (export "add") (param $a i32) (param $b i32) (result i32)
-    get_local $a
-    get_local $b
-    i32.add
+    (i32.add (get_local $a) (get_local $b))
   )
 )`;
 wat2wasm('test.wast', script, { explain: true, debug: true })
@@ -62,9 +60,7 @@ wat2wasm('test.wast', script, { explain: true, debug: true })
     <script>
     const script = `(module
       (func $add (export "add") (param $a i32) (param $b i32) (result i32)
-        get_local $a
-        get_local $b
-        i32.add
+        (i32.add (get_local $a) (get_local $b))
       )
     )`;
     WasmCompiler.wat2wasm('test.wast', script, { explain: true, debug: true })
