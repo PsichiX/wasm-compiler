@@ -1,5 +1,5 @@
 # WASM Compiler
-#### Node.js and browser WASM compiler (using Wabbit - official WebAssembly WAT-to-WASM parser)
+### Node.js and browser WASM compiler (using Wabbit - official WebAssembly WAT-to-WASM parser)
 ------
 ![Travis CI](https://travis-ci.org/PsichiX/wasm-compiler.svg?branch=master)
 ------
