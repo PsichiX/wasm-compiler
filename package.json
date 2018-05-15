@@ -1,6 +1,6 @@
 {
   "name": "@intuicio/wasm-compiler",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "WASM compiler (supports compilation between formats: WAT, WASM, AST)",
   "main": "./bin/cli.js",
   "scripts": {
@@ -10,7 +10,7 @@
     "build-browserify-uglify": "./node_modules/.bin/browserify bin/index -o bin/wasm-compiler.min.js -s WasmCompiler --noparse=lib/libwabt.js -t uglifyify",
     "build-web": "npm run build-browserify && npm run build-browserify-uglify",
     "build": "npm run clean && npm run build-api && npm run build-web",
-    "clean": "rm -r bin"
+    "clean": "rm -rf bin"
   },
   "bin": {
     "wasmc": "./bin/cli.js"
