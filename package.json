@@ -1,6 +1,6 @@
 {
   "name": "@intuicio/wasm-compiler",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "WASM compiler (supports compilation between formats: WAT, WASM, AST)",
   "main": "./bin/cli.js",
   "scripts": {
